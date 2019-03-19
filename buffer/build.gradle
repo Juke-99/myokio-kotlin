@@ -1,0 +1,19 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+
+kotlin {
+  sourceSets {
+    commonMain {
+      kotlin.srcDir('src/main/kotlin')
+      dependencies {
+        api deps.kotlin.stdLib.common
+      }
+    }
+    commonTest {
+      kotlin.srcDir('src/test/kotlin')
+      dependencies {
+        implementation deps.kotlin.test.common
+        implementation deps.kotlin.test.annotations
+      }
+    }
+  }
+}

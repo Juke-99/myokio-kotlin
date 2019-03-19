@@ -1,0 +1,8 @@
+.gradle/
+*.class
+./buffer/build/
+*.html
+*.css
+*.js
+.vscode
+*.log

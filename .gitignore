@@ -1,8 +1,10 @@
 .gradle/
 *.class
-./buffer/build/
+buffer/build/
 *.html
 *.css
 *.js
 .vscode
 *.log
+*.jar
+*.MF

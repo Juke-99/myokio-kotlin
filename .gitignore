@@ -1,6 +1,6 @@
 .gradle/
 *.class
-buffer/build/
+build/
 *.html
 *.css
 *.js
@@ -8,3 +8,7 @@ buffer/build/
 *.log
 *.jar
 *.MF
+*.classpath
+*.project
+*.settings/
+buffer/build/

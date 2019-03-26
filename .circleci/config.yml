@@ -1,0 +1,10 @@
+general:
+  branches:
+    only:
+      - master
+machine:
+  java:
+    version: openjdk8
+deployment:
+  master:
+    branch: master

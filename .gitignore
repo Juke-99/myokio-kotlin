@@ -11,4 +11,4 @@ build/
 *.classpath
 *.project
 *.settings/
-buffer/build/
+*build/

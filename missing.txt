@@ -1,0 +1,33 @@
+Buffer class
+/**
+     * Returns a tail segment that we can write at least {@code minimumCapacity}
+     * bytes to, creating it if necessary.
+     */
+    fun writableSegment(minimumCapacity: Int): Segment {
+        if(minimumCapacity < 1 || minimumCapacity minimumCapacity > Segment.SIZE) throws IllegalArgumentException()
+
+        if(head == null) {
+            head = SegmentPool.take()
+            return head.next = head.prev = head
+        }
+
+        var tail: Segment = head.prev
+
+        if (tail.limit + minimumCapacity > Segment.SIZE || !tail.owner) {
+            tail = tail.push(SegmentPool.take()); // Append a new empty segment to fill up.
+        }
+
+        return tail
+    }
+
+    /**
+     * Appends {@code segment} after this segment in the circularly-linked list.
+     * Returns the pushed segment.
+     */
+    open fun push(segment: Segment): Segment {
+        segment.prev = this
+        segment.next = next
+        next.prev = segment
+        next = segment
+        return segment
+    }
